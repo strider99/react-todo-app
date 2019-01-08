@@ -4,6 +4,7 @@ import Todos from './components/Todos';
 import Header from './components/layout/Header';
 import AddTodo from './components/AddTodo';
 import uuid from 'uuid';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 
 class App extends Component {
@@ -58,14 +59,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="container">
-          <Header />
-          <AddTodo addTodo={this.addTodo} />
-          <Todos todos={this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo} />
-        </div>
+      <Router>
 
-      </div>
+        <div className="App">
+          <div className="container">
+            <Header />
+            
+            <AddTodo addTodo={this.addTodo} />
+            <Todos todos={this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo} />
+          </div>
+
+        </div>
+      </Router>
     );
   }
 }
