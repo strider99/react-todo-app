@@ -1,7 +1,8 @@
 ## React Todo App
 
 ### Installation
-``` yarn install
+```
+yarn install
 ```
 
 ### Run the app
